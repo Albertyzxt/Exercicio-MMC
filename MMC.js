@@ -9,7 +9,7 @@ let numero2 = 0;
 let numero1 = 0;
 
 rl.question(
-  "Vou pegar 2 número e calcular o MMC, digite o primeiro número: ",
+  "Vou pegar 2 números e calcular o MDC, digite o primeiro número: ",
   (num1) => {
     numero1 = Number(num1);
 
@@ -19,13 +19,13 @@ rl.question(
       let maior = Math.max(numero1, numero2);
       let menor = Math.min(numero1, numero2);
 
-      let mmc = maior;
+      let mdc = menor;
 
-      while (mmc % menor !== 0) {
-        mmc += maior;
+      while (maior % mdc !== 0 || menor % mdc !== 0) {
+        mdc--;
       }
 
-      console.log(`O MMC de ${numero1} e ${numero2} é ${mmc}!`);
+      console.log(`O MDC de ${numero1} e ${numero2} é ${mdc}!`);
       rl.close();
     });
   }
