@@ -16,18 +16,15 @@ rl.question(
     rl.question("Digite o segundo número: ", (num2) => {
       numero2 = Number(num2);
 
-      let a = numero1;
-      let b = numero2;
+      let maior = Math.max(numero1, numero2);
+      let menor = Math.min(numero1, numero2);
 
-      while (b !== 0) {
-        let resto = a % b;
-        a = b;
-        b = resto;
+      let mmc = maior;
+
+      while (mmc % menor !== 0) {
+        mmc += maior;
       }
-      let mdc = a;
 
-      let mmc = (numero1 * numero2) / mdc
-      console.log(`O MDC de ${numero1} e ${numero2} é ${mdc}!`);
       console.log(`O MMC de ${numero1} e ${numero2} é ${mmc}!`);
       rl.close();
     });
